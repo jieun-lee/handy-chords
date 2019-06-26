@@ -72,7 +72,7 @@ export default StyleSheet.create({
     },
 
     // Components
-    keyPicker: {
+    customPicker: {
         width: 150
     },
 
