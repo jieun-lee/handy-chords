@@ -5,7 +5,7 @@ import styles from '../Stylesheet';
 export default class AvailableChordPage extends Component {
     render() {
         return (
-            <View>
+            <View style={styles.pageWrapper}>
                 <Text>Available Chords</Text>
             </View>
         );

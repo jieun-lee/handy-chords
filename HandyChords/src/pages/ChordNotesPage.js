@@ -5,7 +5,7 @@ import styles from '../Stylesheet';
 export default class ChordNotesPage extends Component {
     render() {
         return (
-            <View>
+            <View style={styles.pageWrapper}>
                 <Text>Chord Notes</Text>
             </View>
         );

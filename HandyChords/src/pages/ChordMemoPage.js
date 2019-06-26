@@ -5,7 +5,7 @@ import styles from '../Stylesheet';
 export default class ChordMemoPage extends Component {
     render() {
         return (
-            <View>
+            <View style={styles.pageWrapper}>
                 <Text>Chord Memo</Text>
             </View>
         );

@@ -5,7 +5,7 @@ import styles from '../Stylesheet';
 export default class QuickTransposePage extends Component {
     render() {
         return (
-            <View>
+            <View style={styles.pageWrapper}>
                 <Text>Quick Transpose</Text>
             </View>
         );

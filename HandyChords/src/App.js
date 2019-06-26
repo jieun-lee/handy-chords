@@ -60,7 +60,7 @@ export default class App extends Component {
                     break;
             }
             return (
-                <View style={styles.pageWrapper}>
+                <View style={styles.screenWrapper}>
                     {pageContent}
                     <NavBar onClick={this.setCurrentPage} selected={this.state.currentPage} />
                 </View>

@@ -42,11 +42,15 @@ export default StyleSheet.create({
         marginBottom: spacing.largeSpacing
     },
 
-    pageWrapper: {
+    screenWrapper: {
         backgroundColor: colors.lightShade,
         width: '100%',
         height: '100%',
         justifyContent: 'space-between'
+    },
+
+    pageWrapper: {
+        padding: spacing.mediumSpacing
     },
 
     // Nav
