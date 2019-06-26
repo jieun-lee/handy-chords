@@ -7,43 +7,46 @@ export default class ACAccordion extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            expanded: 'Diatonic' // 'Diatonic', 'Secondary', 'Modal'
+            expDiatonic: false,
+            expSecondary: false,
+            expModal: false
         }
     }
 
-    setExpanded(label) {
-        this.setState({
-            expanded: label
-        });
+    toggleExpanded(label) {
+        switch(label) {
+            case 'Diatonic':
+                this.setState({expDiatonic: !this.state.expDiatonic});
+                break;
+            case 'Secondary':
+                this.setState({expSecondary: !this.state.expSecondary});
+                break;
+            case 'Modal':
+                this.setState({expModal: !this.state.expModal});
+                break;
+        }
     }
 
     render() {
-        let expanded = {
-            'Diatonic': false,
-            'Secondary': false,
-            'Modal': false,
-        }
-        expanded[this.state.expanded] = true;
-
         return (
             <View style={styles.acWrapper}>
                 <ACSection
                     label='Diatonic'
-                    expanded={expanded['Diatonic']}
+                    expanded={this.state.expDiatonic}
                     currentKey={this.props.currentKey}
-                    setExpanded={this.setExpanded.bind(this)}
+                    toggleExpanded={this.toggleExpanded.bind(this)}
                 />
                 <ACSection
                     label='Secondary'
-                    expanded={expanded['Secondary']}
+                    expanded={this.state.expSecondary}
                     currentKey={this.props.currentKey}
-                    setExpanded={this.setExpanded.bind(this)}
+                    toggleExpanded={this.toggleExpanded.bind(this)}
                 />
                 <ACSection
                     label='Modal'
-                    expanded={expanded['Modal']}
+                    expanded={this.state.expModal}
                     currentKey={this.props.currentKey}
-                    setExpanded={this.setExpanded.bind(this)}
+                    toggleExpanded={this.toggleExpanded.bind(this)}
                 />
             </View>
         );

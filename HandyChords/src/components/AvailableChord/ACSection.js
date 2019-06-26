@@ -21,7 +21,7 @@ export default class ACSection extends Component {
         return (
             <View style={styles.acWrapper}>
                 <TouchableHighlight
-                    onPress={() => this.props.setExpanded(this.props.label)}
+                    onPress={() => this.props.toggleExpanded(this.props.label)}
                     underlayColor={colors.mediumShade}
                     style={styles.acBar}
                 >
