@@ -6,7 +6,7 @@ export default class ChordMemoPage extends Component {
     render() {
         return (
             <View style={styles.pageWrapper}>
-                <Text>Chord Memo</Text>
+                <Text style={styles.sectionTitle}>Chord Memo</Text>
             </View>
         );
     }

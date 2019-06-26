@@ -1,4 +1,3 @@
-// TODO: update based on new labels
 export function getPageNameFromLabel(label) {
     switch(label) {
       case 'Chord':

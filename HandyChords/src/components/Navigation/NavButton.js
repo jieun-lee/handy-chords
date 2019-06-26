@@ -4,7 +4,6 @@ import styles, {colors} from '../../Stylesheet';
 import {getPageNameFromLabel} from '../../Util';
 
 export default class NavButton extends Component {
-
     render() {
         let buttonStyle = [styles.navButton];
         let textStyle = [styles.navText];

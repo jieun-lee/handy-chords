@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export const colors = {
+    white: '#FFFFFF',
     lightShade: '#BDEEF9',
     lightMediumShade: '#82DDF2',
     mediumShade: '#25D0F7',
@@ -82,6 +83,24 @@ export default StyleSheet.create({
     tchartSubChord: {
         color: colors.grey,
         fontSize: fontSizes.smallText
+    },
+
+    acWrapper: {
+        //
+    },
+
+    acBar: {
+        backgroundColor: colors.lightMediumShade
+    },
+
+    acBarText: {
+        color: colors.black,
+        fontSize: fontSizes.mediumText
+    },
+
+    acExpanded: {
+        backgroundColor: colors.white,
+        height: 100
     },
 
     // Nav

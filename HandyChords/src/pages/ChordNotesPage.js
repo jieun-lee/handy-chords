@@ -6,7 +6,7 @@ export default class ChordNotesPage extends Component {
     render() {
         return (
             <View style={styles.pageWrapper}>
-                <Text>Chord Notes</Text>
+                <Text style={styles.sectionTitle}>Chord Notes</Text>
             </View>
         );
     }
