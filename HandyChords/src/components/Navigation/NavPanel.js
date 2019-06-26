@@ -8,12 +8,12 @@ export default class NavPanel extends Component {
         return (
             <View>
                 <View style={styles.navPanelRow}>
-                    <NavButtonRound label='Chord' />
-                    <NavButtonRound label='Transpose' />
+                    <NavButtonRound label='Chord' onClick={this.props.onClick} />
+                    <NavButtonRound label='Transpose' onClick={this.props.onClick} />
                 </View>
                 <View style={styles.navPanelRow}>
-                    <NavButtonRound label='Available' />
-                    <NavButtonRound label='Memo' />
+                    <NavButtonRound label='Available' onClick={this.props.onClick} />
+                    <NavButtonRound label='Memo' onClick={this.props.onClick} />
                 </View>
             </View>
         );

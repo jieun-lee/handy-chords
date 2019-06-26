@@ -7,13 +7,23 @@ export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isStartPage: true
+            isStartPage: true,
+            currentPage: '' // Chord, Transpose, Available, Memo
         }
+        this.removeStartPage = this.removeStartPage.bind(this);
+        this.setCurrentPage = this.setCurrentPage.bind(this);
     }
 
-    _removeStartPage() {
+    removeStartPage(label) {
         this.setState({
             isStartPage: false
+        });
+        this.setCurrentPage(label);
+    }
+
+    setCurrentPage(label) {
+        this.setState({
+            currentPage: label
         });
     }
 
@@ -22,7 +32,7 @@ export default class App extends Component {
             return (
                 <View style={styles.mainBackground}>
                     <Text style={styles.mainTitle}>Handy Chords</Text>
-                        <NavPanel />
+                    <NavPanel onClick={this.removeStartPage} />
                 </View>
             )
         } else {
