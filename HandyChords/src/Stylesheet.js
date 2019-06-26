@@ -71,9 +71,20 @@ export default StyleSheet.create({
         justifyContent: 'space-evenly'
     },
 
+    chordPickerDropdownWrapper: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        margin: spacing.largeSpacing
+    },
+
+    chordNotesText: {
+        color: colors.black,
+        fontSize: fontSizes.mediumText
+    },
+
     // Components
     customPicker: {
-        width: 150
+        width: 120,
     },
 
     tchartMainChord: {
