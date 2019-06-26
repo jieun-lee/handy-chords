@@ -6,12 +6,14 @@ export const colors = {
     mediumShade: '#25D0F7',
     mediumDarkShade: '#1ABBE0',
     darkShade: '#024F60',
+    grey: '#888888',
     black: '#000000'
 }
 
 const fontSizes = {
     smallText: 14,
     mediumText: 18,
+    sectionTitleText: 24,
     titleText: 36
 }
 
@@ -26,7 +28,7 @@ const spacing = {
 ////////////////////////////////////////////////////////
 
 export default StyleSheet.create({
-    // Main Page
+    // Main Page Layout
     mainBackground: {
         backgroundColor: colors.lightShade,
         width: '100%',
@@ -51,6 +53,35 @@ export default StyleSheet.create({
 
     pageWrapper: {
         padding: spacing.mediumSpacing
+    },
+
+    sectionTitle: {
+        color: colors.black,
+        fontWeight: 'bold',
+        fontSize: fontSizes.sectionTitleText,
+        textAlign: 'center',
+        margin: spacing.smallSpacing
+    },
+
+    // Specific Pages
+    keyPickerWrapper: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly'
+    },
+
+    // Components
+    keyPicker: {
+        width: 150
+    },
+
+    tchartMainChord: {
+        color: colors.black,
+        fontSize: fontSizes.mediumText
+    },
+
+    tchartSubChord: {
+        color: colors.grey,
+        fontSize: fontSizes.smallText
     },
 
     // Nav
@@ -93,5 +124,4 @@ export default StyleSheet.create({
     navBar: {
         flexDirection: 'row',
     },
-
 });
