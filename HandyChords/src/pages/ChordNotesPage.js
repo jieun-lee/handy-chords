@@ -3,6 +3,7 @@ import {View, Text} from 'react-native';
 import styles from '../Stylesheet';
 import KeyPicker from '../components/KeyPicker';
 import CustomPicker from '../components/CustomPicker';
+import {getKeySet, getChordIndex, tensionToIndex} from '../Util';
 
 export default class ChordNotesPage extends Component {
     constructor(props) {
@@ -33,8 +34,17 @@ export default class ChordNotesPage extends Component {
     }
 
     getChordNotes() {
-        // stub
-        return 'C E G';
+        const keySet = getKeySet(this.state.note);
+        let noteIndices = getChordIndex(this.state.additional);
+        let tensionIndex = tensionToIndex(this.state.tension);
+        if (tensionIndex !== '') {
+            noteIndices.push(tensionIndex);
+        }
+        let notes = '';
+        for (let i=0; i < noteIndices.length; i++) {
+            notes += keySet[noteIndices[i]] + ' ';
+        }
+        return notes;
     }
 
     render() {
@@ -53,7 +63,7 @@ export default class ChordNotesPage extends Component {
                     <CustomPicker
                         startValue={this.state.tension}
                         handlePicker={this.updateChordTension.bind(this)}
-                        pickerVals={['', '9', 'b9', '#9', 'b11', '11', '#11', 'b13', '13', 'b13']} />
+                        pickerVals={['', 'b9', '9', '#9', 'b11', '11', '#11', 'b13', '13', '#13']} />
                 </View>
                 <Text style={styles.chordNotesText}>Chord: {this.state.note}{this.state.additional}
                 {this.state.tension.length > 0 && '('+this.state.tension+')'}</Text>

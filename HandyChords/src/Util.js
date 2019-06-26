@@ -23,9 +23,9 @@ export function getKeySet(key) {
     // TODO: decide whether I want to change to common vs keep as-is
     switch(key) {
         case 'C':
-            return ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+            return ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'G#', 'A', 'Bb', 'B'];
         case 'C#':
-            return ['C#', 'D', 'D#', 'E', 'E#', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'B#'];
+            return ['C#', 'D', 'D#', 'E', 'E#', 'F#', 'G', 'G#', 'Gx', 'A#', 'B', 'B#'];
         case 'Db':
             return ['Db', 'D', 'Eb', 'Fb', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'Cb', 'C'];
         case 'D':
@@ -58,5 +58,64 @@ export function getKeySet(key) {
             return ['B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#'];
         default:
             return [];
+    }
+}
+
+export function getChordIndex(chord) {
+    switch(chord) {
+        case 'm':
+            return [0, 3, 7];
+        case 'aug':
+            return [0, 4, 8];
+        case 'dim':
+            return [0, 3, 6];
+        case '7':
+            return [0, 4, 7, 10];
+        case 'M7':
+            return [0, 4, 7, 11];
+        case 'm7':
+            return [0, 3, 7, 10];
+        case 'mM7':
+            return [0, 3, 7, 11];
+        case 'dim7':
+            return [0, 3, 6, 9];
+        case 'm7(b5)':
+            return [0, 3, 6, 10];
+        case 'add2':
+            return [0, 2, 4, 7];
+        case 'sus4':
+            return [0, 5, 7];
+        case '6':
+            return [0, 4, 7, 9];
+        case 'm6':
+            return [0, 3, 7, 9];
+        default: // Major Triad
+            return [0, 4, 7];
+    }
+}
+
+// TODO: handle case where user doesn't specify the 7th chord
+export function tensionToIndex(tension) {
+    switch(tension) {
+        case 'b9':
+            return 1;
+        case '9':
+            return 2;
+        case '#9':
+            return 3;
+        case 'b11':
+            return 4;
+        case '11':
+            return 5;
+        case '#11':
+            return 6;
+        case 'b13':
+            return 8;
+        case '13':
+            return 9;
+        case '#13':
+            return 10;
+        default:
+            return '';
     }
 }
