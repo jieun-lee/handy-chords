@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 import styles from './Stylesheet';
 import NavPanel from './components/Navigation/NavPanel';
+import NavBar from './components/Navigation/NavBar';
+import ChordNotesPage from './pages/ChordNotesPage';
+import QuickTransposePage from './pages/QuickTransposePage';
+import AvailableChordPage from './pages/AvailableChordPage';
+import ChordMemoPage from './pages/ChordMemoPage';
 
 export default class App extends Component {
     constructor(props) {
@@ -36,9 +41,28 @@ export default class App extends Component {
                 </View>
             )
         } else {
+            let pageContent;
+            switch(this.state.currentPage) {
+                case 'Chord':
+                    pageContent = <ChordNotesPage />;
+                    break;
+                case 'Transpose':
+                    pageContent = <QuickTransposePage />;
+                    break;
+                case 'Available':
+                    pageContent = <AvailableChordPage />;
+                    break;
+                case 'Memo':
+                    pageContent = <ChordMemoPage />;
+                    break;
+                default:
+                    pageContent = <Text>An unexpected error has occurred. Please exit and restart the app.</Text>;
+                    break;
+            }
             return (
-                <View style={styles.mainBackground}>
-                    <Text style={styles.mainTitle}>Detailed Page</Text>
+                <View style={styles.pageWrapper}>
+                    {pageContent}
+                    <NavBar onClick={this.setCurrentPage} selected={this.state.currentPage} />
                 </View>
             )
         }

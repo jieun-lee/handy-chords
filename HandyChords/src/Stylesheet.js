@@ -42,24 +42,52 @@ export default StyleSheet.create({
         marginBottom: spacing.largeSpacing
     },
 
+    pageWrapper: {
+        backgroundColor: colors.lightShade,
+        width: '100%',
+        height: '100%',
+        justifyContent: 'space-between'
+    },
+
     // Nav
-    roundNavButton: {
+    navButton: {
         backgroundColor: colors.mediumShade,
+        justifyContent: 'center',
+    },
+
+    navButtonRound: {
         width: 120,
         height: 120,
         borderRadius: 100,
-        justifyContent: 'center',
         margin: spacing.smallSpacing,
         padding: spacing.mediumSpacing
     },
 
-    roundNavText: {
+    navButtonFlat: {
+        flex: 1,
+        padding: spacing.mediumSpacing
+    },
+
+    navButtonSelected: {
+        backgroundColor: colors.mediumDarkShade
+    },
+
+    navText: {
         color: colors.black,
-        fontSize: fontSizes.mediumText,
+        fontSize: fontSizes.smallText,
         textAlign: 'center'
+    },
+
+    navTextRound: {
+        fontSize: fontSizes.mediumText,
     },
 
     navPanelRow: {
         flexDirection: 'row'
-    }
+    },
+
+    navBar: {
+        flexDirection: 'row',
+    },
+
 });
