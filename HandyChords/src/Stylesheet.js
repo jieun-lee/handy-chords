@@ -14,6 +14,7 @@ export const colors = {
 const fontSizes = {
     smallText: 14,
     mediumText: 18,
+    largeText: 20,
     sectionTitleText: 24,
     titleText: 36
 }
@@ -90,17 +91,28 @@ export default StyleSheet.create({
     },
 
     acBar: {
-        backgroundColor: colors.lightMediumShade
+        backgroundColor: colors.lightMediumShade,
+        padding: spacing.smallSpacing
     },
 
     acBarText: {
         color: colors.black,
-        fontSize: fontSizes.mediumText
+        fontSize: fontSizes.largeText
     },
 
     acExpanded: {
         backgroundColor: colors.white,
-        height: 100
+        padding: spacing.smallSpacing
+    },
+
+    acMainChord: {
+        fontSize: fontSizes.mediumText,
+        color: colors.black,
+    },
+
+    acSubChord: {
+        fontSize: fontSizes.smallText,
+        color: colors.grey,
     },
 
     // Nav

@@ -1,3 +1,7 @@
+export function getErrorMessage() {
+    return 'An unexpected error has occurred. Please exit and restart the app.';
+}
+
 export function getPageNameFromLabel(label) {
     switch(label) {
       case 'Chord':

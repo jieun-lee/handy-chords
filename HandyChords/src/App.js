@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 import styles from './Stylesheet';
+import {getErrorMessage} from './Util';
 import NavPanel from './components/Navigation/NavPanel';
 import NavBar from './components/Navigation/NavBar';
 import ChordNotesPage from './pages/ChordNotesPage';
@@ -12,8 +13,8 @@ export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isStartPage: true,
-            currentPage: '' // Chord, Transpose, Available, Memo
+            isStartPage: false,
+            currentPage: 'Available' // Chord, Transpose, Available, Memo
         }
         this.removeStartPage = this.removeStartPage.bind(this);
         this.setCurrentPage = this.setCurrentPage.bind(this);
@@ -56,7 +57,7 @@ export default class App extends Component {
                     pageContent = <ChordMemoPage />;
                     break;
                 default:
-                    pageContent = <Text>An unexpected error has occurred. Please exit and restart the app.</Text>;
+                    pageContent = <Text>{getErrorMessage()}</Text>;
                     break;
             }
             return (
