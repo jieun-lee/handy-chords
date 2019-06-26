@@ -1,6 +1,21 @@
+// TODO: update based on new labels
+export function getPageNameFromLabel(label) {
+    switch(label) {
+      case 'Chord':
+        return 'Chord Notes';
+      case 'Transpose':
+        return 'Quick Transpose';
+      case 'Available':
+        return 'Available Chord';
+      case 'Memo':
+        return 'Chord Memo';
+      default:
+        return label;
+    }
+}
+
 // index: 0 1 2 3 4 5 6 7 8 9 10 11
 // notes: 1   2   3 4   5   6     7
-
 export function getKeySet(key) {
     // TODO: decide whether I want to change to common vs keep as-is
     switch(key) {
