@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {View, Text, TextInput, TouchableHighlight} from 'react-native';
-import styles, {colors} from '../Stylesheet';
-import KeyPicker from '../components/KeyPicker';
-import CustomPicker from '../components/CustomPicker';
+import styles, {colors} from '../../Stylesheet';
+import KeyPicker from '../KeyPicker';
+import CustomPicker from '../CustomPicker';
 
 export default class SongProps extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            songTitle: 'Untitled',
+            songTitle: '',
             songKey: 'C',
             songTime: '4/4',
             isExpanded: true

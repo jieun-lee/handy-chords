@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {View, Text, TextInput} from 'react-native';
 import styles from '../Stylesheet';
-import SongProps from '../components/SongProps';
+import SongProps from '../components/Song/SongProps';
+import SongRow from '../components/Song/SongRow';
 
 export default class ChordMemoPage extends Component {
     constructor(props) {
@@ -10,6 +11,10 @@ export default class ChordMemoPage extends Component {
             songTitle: 'Untitled',
             songKey: 'C',
             songTime: '4/4',
+            songMeasures: [
+                [['C', '', '', ''], ['F', '', '', ''], ['Dm', '', 'G7', ''], ['C', '', '', 'G/B']],
+                [['Am', '', '', ''], ['Em', '', '', ''], ['F', '', 'G7', ''], ['C', '', '', '']],
+            ]
         }
     }
 
@@ -20,11 +25,25 @@ export default class ChordMemoPage extends Component {
         // give them dialog box, then what they want to do
     }
 
+    addMeasure() {
+        const newRow = [];
+        for (var i=0; i < 4; i++) {
+            // TODO: would taking this out cause reference errors?
+            const blankMeasure = ['', '', '', ''];
+            blankRow.push(blankMeasure);
+        }
+        this.setState({
+            songMeasures: songMeasures.push(newRow)
+        });
+    }
+
     render() {
         return (
             <View style={styles.pageWrapper}>
                 <Text style={styles.sectionTitle}>Chord Memo</Text>
-                <SongProps onChange={this.handlePropChange.bind(this)} />                
+                <SongProps onChange={this.handlePropChange.bind(this)} />
+                <SongRow rowNo={1} />
+                <SongRow rowNo={2} />
             </View>
         );
     }

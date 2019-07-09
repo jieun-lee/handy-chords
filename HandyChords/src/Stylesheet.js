@@ -20,6 +20,7 @@ const fontSizes = {
 }
 
 const spacing = {
+    xxsmallSpacing: 4,
     xsmallSpacing: 8,
     smallSpacing: 12,
     mediumSpacing: 16,
@@ -122,6 +123,29 @@ export default StyleSheet.create({
         borderWidth: 1,
         flex: 1,
         margin: spacing.xsmallSpacing
+    },
+
+    songRowContainer: {
+        width: '100%',
+        backgroundColor: colors.lightMediumShade,
+        height: 50,
+        marginTop: spacing.xsmallSpacing,
+        flexDirection: 'row',
+    },
+
+    songBarline: {
+        width: 2,
+        backgroundColor: colors.black,
+        height: '100%'
+    },
+
+    songMeasure: {
+        flex: 1,
+        height: '100%',
+        alignItems: 'center',
+        flexDirection: 'row',
+        padding: spacing.xxsmallSpacing,
+        backgroundColor: colors.white
     },
 
     // Components
