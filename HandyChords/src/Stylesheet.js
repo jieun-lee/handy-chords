@@ -8,7 +8,8 @@ export const colors = {
     mediumDarkShade: '#1ABBE0',
     darkShade: '#024F60',
     grey: '#888888',
-    black: '#000000'
+    black: '#000000',
+    backdrop: 'rgba(0, 0, 0, 0.2)'
 }
 
 const fontSizes = {
@@ -55,7 +56,7 @@ export default StyleSheet.create({
     },
 
     pageWrapper: {
-        padding: spacing.mediumSpacing
+        padding: spacing.mediumSpacing,
     },
 
     centeringWrapper: {
@@ -175,6 +176,24 @@ export default StyleSheet.create({
 
     songMeasureChordText: {
         color: colors.black,
+    },
+
+    measureEditor: {
+        position: 'absolute',
+        width: '200%',
+        height: '200%',
+        left: 0,
+        top: 0,
+        zIndex: 3,
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        backgroundColor: colors.backdrop,
+    },
+
+    measureEditorPage: {
+        width: '100%',
+        height: '60%',
+        backgroundColor: colors.white,
     },
 
     // Components

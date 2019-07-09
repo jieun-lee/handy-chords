@@ -3,6 +3,7 @@ import {View, Text, TouchableHighlight} from 'react-native';
 import styles, {colors} from '../Stylesheet';
 import SongProps from '../components/Song/SongProps';
 import SongRow from '../components/Song/SongRow';
+import MeasureEditor from './MeasureEditor';
 
 export default class ChordMemoPage extends Component {
     constructor(props) {
@@ -62,6 +63,7 @@ export default class ChordMemoPage extends Component {
                         <Text style={styles.addRowButtonText}>Add Row</Text>
                     </TouchableHighlight>
                 </View>
+                {/* <MeasureEditor /> */}
             </View>
         );
     }
