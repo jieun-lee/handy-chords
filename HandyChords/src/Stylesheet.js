@@ -134,7 +134,7 @@ export default StyleSheet.create({
     },
 
     songBarline: {
-        width: 2,
+        width: 1,
         backgroundColor: colors.black,
         height: '100%'
     },
@@ -144,8 +144,20 @@ export default StyleSheet.create({
         height: '100%',
         alignItems: 'center',
         flexDirection: 'row',
-        padding: spacing.xxsmallSpacing,
+        // padding: spacing.xxsmallSpacing,
         backgroundColor: colors.white
+    },
+    
+    songMeasureChordsWrapper: {
+        flexDirection: 'row',
+    },
+
+    songMeasureChord: {
+        margin: spacing.xxsmallSpacing
+    },
+
+    songMeasureChordText: {
+        color: colors.black,
     },
 
     // Components

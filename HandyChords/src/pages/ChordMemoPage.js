@@ -11,7 +11,7 @@ export default class ChordMemoPage extends Component {
             songTitle: 'Untitled',
             songKey: 'C',
             songTime: '4/4',
-            songMeasures: [
+            songRows: [
                 [['C', '', '', ''], ['F', '', '', ''], ['Dm', '', 'G7', ''], ['C', '', '', 'G/B']],
                 [['Am', '', '', ''], ['Em', '', '', ''], ['F', '', 'G7', ''], ['C', '', '', '']],
             ]
@@ -27,7 +27,7 @@ export default class ChordMemoPage extends Component {
 
     addMeasure() {
         const newRow = [];
-        for (var i=0; i < 4; i++) {
+        for (var i = 0; i < 4; i++) {
             // TODO: would taking this out cause reference errors?
             const blankMeasure = ['', '', '', ''];
             blankRow.push(blankMeasure);
@@ -37,13 +37,20 @@ export default class ChordMemoPage extends Component {
         });
     }
 
+    renderSongRows() {
+        let renderedRows = [];
+        for (var i = 0; i < this.state.songRows.length; i++) {
+            renderedRows.push(<SongRow key={i} rowNo={i} rowBars={this.state.songRows[i]} />)
+        }
+        return renderedRows;
+    }
+
     render() {
         return (
             <View style={styles.pageWrapper}>
                 <Text style={styles.sectionTitle}>Chord Memo</Text>
                 <SongProps onChange={this.handlePropChange.bind(this)} />
-                <SongRow rowNo={1} />
-                <SongRow rowNo={2} />
+                {this.renderSongRows()}
             </View>
         );
     }
