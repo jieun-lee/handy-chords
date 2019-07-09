@@ -82,9 +82,28 @@ export default StyleSheet.create({
         fontSize: fontSizes.mediumText
     },
 
+    songPropWrapper: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+
+    songPropText: {
+        fontSize: fontSizes.mediumText,
+        color: colors.black
+    },
+
+    songTitlebox: {
+        height: 40,
+        borderColor: colors.mediumDarkShade,
+        borderWidth: 1,
+        flex: 1
+    },
+
     // Components
     customPicker: {
         width: 120,
+        // borderWidth: 1,
+        // borderColor: colors.mediumDarkShade
     },
 
     tchartMainChord: {

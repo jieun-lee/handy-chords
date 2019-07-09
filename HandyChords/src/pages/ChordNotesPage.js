@@ -52,6 +52,7 @@ export default class ChordNotesPage extends Component {
             <View style={styles.pageWrapper}>
                 <Text style={styles.sectionTitle}>Chord Notes</Text>
                 <View style={styles.chordPickerDropdownWrapper}>
+                    {/* buttons instead of dropdowns? */}
                     <KeyPicker
                         startValue={this.state.note}
                         handlePicker={this.updateChordNote.bind(this)} />
