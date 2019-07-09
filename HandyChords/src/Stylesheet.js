@@ -82,21 +82,46 @@ export default StyleSheet.create({
         fontSize: fontSizes.mediumText
     },
 
+    songPropsContainer: {
+        borderColor: colors.lightMediumShade,
+        borderWidth: 1
+    },
+
+    songPropsHeader: {
+        backgroundColor: colors.lightMediumShade,
+        flexDirection: 'row'
+    },
+
+    songPropsHeaderText: {
+        fontWeight: 'bold',
+        color: colors.black,
+        fontSize: fontSizes.mediumText,
+        flex: 11
+    },
+    
+    toggleButton: {
+        backgroundColor: colors.mediumDarkShade,
+        flex: 1,
+        alignItems: 'center'
+    },
+
     songPropWrapper: {
         flexDirection: 'row',
         alignItems: 'center'
     },
 
     songPropText: {
-        fontSize: fontSizes.mediumText,
-        color: colors.black
+        fontSize: fontSizes.smallText,
+        color: colors.black,
+        fontWeight: 'bold'
     },
 
     songTitlebox: {
-        height: 40,
-        borderColor: colors.mediumDarkShade,
+        height: 35,
+        borderColor: colors.lightMediumShade,
         borderWidth: 1,
-        flex: 1
+        flex: 1,
+        margin: spacing.xsmallSpacing
     },
 
     // Components
