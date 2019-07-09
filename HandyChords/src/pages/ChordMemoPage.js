@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text, TextInput} from 'react-native';
-import styles from '../Stylesheet';
+import {View, Text, TouchableHighlight} from 'react-native';
+import styles, {colors} from '../Stylesheet';
 import SongProps from '../components/Song/SongProps';
 import SongRow from '../components/Song/SongRow';
 
@@ -26,14 +26,16 @@ export default class ChordMemoPage extends Component {
     }
 
     addMeasure() {
+        const prevRows = this.state.songRows;
         const newRow = [];
         for (var i = 0; i < 4; i++) {
             // TODO: would taking this out cause reference errors?
             const blankMeasure = ['', '', '', ''];
-            blankRow.push(blankMeasure);
+            newRow.push(blankMeasure);
         }
+        prevRows.push(newRow);
         this.setState({
-            songMeasures: songMeasures.push(newRow)
+            songRows: prevRows
         });
     }
 
@@ -51,6 +53,15 @@ export default class ChordMemoPage extends Component {
                 <Text style={styles.sectionTitle}>Chord Memo</Text>
                 <SongProps onChange={this.handlePropChange.bind(this)} />
                 {this.renderSongRows()}
+                <View style={styles.centeringWrapper}>
+                    <TouchableHighlight
+                        onPress={() => this.addMeasure()}
+                        underlayColor={colors.lightMediumShade}
+                        style={styles.addRowButton}
+                    >
+                        <Text style={styles.addRowButtonText}>Add Row</Text>
+                    </TouchableHighlight>
+                </View>
             </View>
         );
     }

@@ -58,6 +58,10 @@ export default StyleSheet.create({
         padding: spacing.mediumSpacing
     },
 
+    centeringWrapper: {
+        alignItems: 'center'
+    },
+
     sectionTitle: {
         color: colors.black,
         fontWeight: 'bold',
@@ -131,6 +135,19 @@ export default StyleSheet.create({
         height: 50,
         marginTop: spacing.xsmallSpacing,
         flexDirection: 'row',
+    },
+
+    addRowButton: {
+        backgroundColor: colors.mediumShade,
+        borderRadius: 50,
+        width: '30%',
+        alignItems: 'center',
+        padding: spacing.xsmallSpacing,
+        margin: spacing.xsmallSpacing
+    },
+
+    addRowButtonText: {
+        color: colors.black
     },
 
     songBarline: {
